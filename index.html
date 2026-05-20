@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Imantek - Ingeniería y Mantenimiento Técnico. Servicios industriales de electricidad, mecánica, automatización, instrumentación, desarrollo de software e IoT.">
+    <meta name="description" content="Imantek - Empresa prestadora de servicios técnicos en mantenimiento, montajes, electricidad, automatización, instrumentación, software, redes, IoT y suministros.">
     <meta name="author" content="Imantek S.A.S.">
     <title>Imantek | Ingeniería y Mantenimiento Técnico Industrial</title>
     <!-- Google Fonts: Outfit (Encabezados) e Inter (Cuerpo) -->
@@ -20,7 +20,7 @@
     <header class="navbar" id="main-header">
         <div class="nav-container">
             <a href="#hero" class="nav-logo" id="logo-link">
-                <span class="logo-icon"><i class="fa-solid fa-magnet"></i></span>
+                <span class="logo-icon"><i class="fa-solid fa-industry"></i></span>
                 <span class="logo-text">IMAN<span class="highlight">TEK</span></span>
             </a>
             <button class="nav-toggle" id="nav-toggle-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="navigation-menu">
@@ -30,7 +30,7 @@
                 <a href="#hero" class="nav-link active" id="nav-home">Inicio</a>
                 <a href="#nosotros" class="nav-link" id="nav-about">Nosotros</a>
                 <a href="#servicios" class="nav-link" id="nav-services">Servicios</a>
-                <a href="#simulador" class="nav-link" id="nav-sim">Interactividad</a>
+                <a href="#metodologia" class="nav-link" id="nav-method">Cómo trabajamos</a>
                 <a href="#contacto" class="nav-btn" id="nav-contact-btn">Contáctanos</a>
             </nav>
         </div>
@@ -39,64 +39,68 @@
     <!-- Sección Hero -->
     <section class="hero-section" id="hero">
         <div class="hero-background">
-            <div class="glow-orb orb-1"></div>
-            <div class="glow-orb orb-2"></div>
+            <div class="hero-grid-pattern"></div>
         </div>
         <div class="hero-container">
             <div class="hero-content">
-                <span class="hero-tagline"><i class="fa-solid fa-gears"></i> INGMANTTEC</span>
-                <h1 class="hero-title">Ingeniería y <span class="gradient-text">Mantenimiento</span> Técnico de Vanguardia</h1>
+                <span class="hero-tagline"><i class="fa-solid fa-gears"></i> Ingeniería, Mantenimiento y Tecnología</span>
+                <h1 class="hero-title">Servicios técnicos integrales para operaciones <span class="gradient-text">seguras y confiables</span></h1>
                 <p class="hero-description">
-                    Optimizamos la confiabilidad, el rendimiento y la seguridad de tus equipos industriales mediante soluciones avanzadas en electricidad, metalmecánica, automatización, instrumentación y tecnologías 4.0.
+                    IMANTEK acompaña a empresas, comercios y clientes residenciales con mantenimiento, montajes, automatización, instrumentación, soluciones TI y suministro técnico. Respondemos con criterio, seguridad y ejecución en campo.
                 </p>
                 <div class="hero-actions">
                     <a href="#servicios" class="btn-primary" id="explore-services-btn">
                         <span>Explorar Servicios</span>
                         <i class="fa-solid fa-arrow-right"></i>
                     </a>
-                    <a href="#simulador" class="btn-secondary" id="try-simulator-btn">
-                        <i class="fa-solid fa-wand-magic-sparkles"></i>
-                        <span>Probar Simulador</span>
+                    <a href="#metodologia" class="btn-secondary" id="view-method-btn">
+                        <i class="fa-solid fa-list-check"></i>
+                        <span>Cómo Trabajamos</span>
                     </a>
                 </div>
             </div>
             <div class="hero-visual">
-                <!-- Tarjeta interactiva del estado electromagnético de la empresa -->
+                <!-- Tarjeta operativa de servicios -->
                 <div class="glass-card hero-interactive-card" id="interactive-status-card">
                     <div class="card-header">
                         <span class="status-indicator live"></span>
-                        <span class="status-label">IMANTEK CORE SYSTEM 4.0</span>
+                        <span class="status-label">Centro de servicios IMANTEK</span>
                     </div>
                     <div class="system-stats">
                         <div class="stat-row">
-                            <span class="stat-name">Eficiencia Operativa</span>
+                            <span class="stat-name">Atención en campo</span>
                             <div class="stat-bar-container">
                                 <div class="stat-bar-fill" style="width: 98%;"></div>
                             </div>
-                            <span class="stat-value">98%</span>
+                            <span class="stat-value">Ágil</span>
                         </div>
                         <div class="stat-row">
-                            <span class="stat-name">Seguridad en Sitio</span>
+                            <span class="stat-name">Seguridad en sitio</span>
                             <div class="stat-bar-container">
                                 <div class="stat-bar-fill" style="width: 100%;"></div>
                             </div>
-                            <span class="stat-value">100%</span>
+                            <span class="stat-value">Prioridad</span>
                         </div>
                         <div class="stat-row">
-                            <span class="stat-name">Respuesta Técnica</span>
+                            <span class="stat-name">Solución integral</span>
                             <div class="stat-bar-container">
                                 <div class="stat-bar-fill" style="width: 95%;"></div>
                             </div>
-                            <span class="stat-value">&lt; 2h</span>
+                            <span class="stat-value">360°</span>
                         </div>
                     </div>
-                    <div class="card-pulse-visual">
-                        <div class="magnetic-wave"></div>
-                        <div class="magnetic-wave delay-1"></div>
-                        <div class="magnetic-wave delay-2"></div>
-                        <i class="fa-solid fa-microchip core-icon"></i>
+                    <div class="card-service-visual">
+                        <div class="service-signal">
+                            <i class="fa-solid fa-helmet-safety core-icon"></i>
+                        </div>
+                        <div class="scope-list">
+                            <span><i class="fa-solid fa-bolt"></i> Electricidad</span>
+                            <span><i class="fa-solid fa-screwdriver-wrench"></i> Mantenimiento</span>
+                            <span><i class="fa-solid fa-network-wired"></i> Automatización</span>
+                            <span><i class="fa-solid fa-laptop-code"></i> TI e IoT</span>
+                        </div>
                     </div>
-                    <p class="card-footer-text">Líderes en Automatización, Montajes y Tecnologías Industriales.</p>
+                    <p class="card-footer-text">Un solo aliado para diagnosticar, ejecutar y mantener activos críticos.</p>
                 </div>
             </div>
         </div>
@@ -275,59 +279,66 @@
         </div>
     </section>
 
-    <!-- Sección Simulador Interactivo de Magnetismo -->
-    <section class="simulator-section" id="simulador">
-        <div class="simulator-container">
+    <!-- Sección Metodología de Servicio -->
+    <section class="method-section" id="metodologia">
+        <div class="method-container">
             <div class="section-header">
-                <span class="section-subtitle">Widget Interactivo</span>
-                <h2 class="section-title">Laboratorio Electromagnético IMANTEK</h2>
+                <span class="section-subtitle">Cómo Trabajamos</span>
+                <h2 class="section-title">Servicio Técnico con Ruta Clara</h2>
                 <div class="section-divider"></div>
             </div>
             
-            <div class="sim-wrapper">
-                <div class="sim-controls glass-card">
-                    <h3>Panel de Control</h3>
-                    <p class="sim-desc">
-                        Interactúa con la esencia de nuestro nombre. <strong>Arrastra el imán</strong> en el laboratorio visual para ver las líneas de fuerza magnética e inducción reaccionar dinámicamente en tiempo real.
-                    </p>
-                    <div class="control-group">
-                        <label for="magnet-strength">Intensidad del Campo Magnético</label>
-                        <input type="range" id="magnet-strength" min="1" max="10" value="5" class="slider">
-                        <div class="slider-labels">
-                            <span>Débil</span>
-                            <span>Fuerte</span>
+            <div class="method-layout">
+                <div class="method-steps">
+                    <article class="glass-card method-step">
+                        <span class="step-number">01</span>
+                        <div>
+                            <h3>Diagnóstico y alcance</h3>
+                            <p>Escuchamos el requerimiento, revisamos condiciones técnicas y definimos prioridades de seguridad, continuidad y costo.</p>
                         </div>
-                    </div>
-                    <div class="control-group">
-                        <label for="btn-reverse-poles">Orientación de Polos</label>
-                        <button class="btn-toggle" id="btn-reverse-poles">
-                            <i class="fa-solid fa-right-left"></i>
-                            <span>Invertir Polos (N &harr; S)</span>
-                        </button>
-                    </div>
-                    <div class="control-group">
-                        <label for="line-density">Densidad de Líneas de Fuerza</label>
-                        <input type="range" id="line-density" min="5" max="30" value="15" class="slider">
-                    </div>
-                    <div class="control-group">
-                        <label>Visualización Avanzada</label>
-                        <div class="checkbox-wrapper">
-                            <input type="checkbox" id="show-particles" checked>
-                            <label for="show-particles">Mostrar Flujo de Electrones (Partículas)</label>
+                    </article>
+                    <article class="glass-card method-step">
+                        <span class="step-number">02</span>
+                        <div>
+                            <h3>Plan y cotización</h3>
+                            <p>Preparamos una propuesta clara con actividades, recursos, tiempos estimados y recomendaciones técnicas.</p>
                         </div>
-                    </div>
-                    <div class="sim-info-box">
-                        <span class="info-icon"><i class="fa-solid fa-circle-info"></i></span>
-                        <p id="simulator-info-text">El imán genera un campo dipolo magnético. Las partículas fluyen desde el polo norte (Rojo) hacia el polo sur (Azul).</p>
-                    </div>
+                    </article>
+                    <article class="glass-card method-step">
+                        <span class="step-number">03</span>
+                        <div>
+                            <h3>Ejecución en campo</h3>
+                            <p>Realizamos el servicio con personal técnico, herramientas adecuadas y control de riesgos durante la intervención.</p>
+                        </div>
+                    </article>
+                    <article class="glass-card method-step">
+                        <span class="step-number">04</span>
+                        <div>
+                            <h3>Entrega y seguimiento</h3>
+                            <p>Documentamos hallazgos, entregamos recomendaciones y dejamos abierta la ruta para mantenimiento preventivo.</p>
+                        </div>
+                    </article>
                 </div>
 
-                <div class="sim-canvas-container glass-card">
-                    <canvas id="magnetic-canvas" width="600" height="400" aria-label="Simulador visual de campo magnético de IMANTEK">Simulador visual de campo magnético de IMANTEK.</canvas>
-                    <div class="canvas-overlay-instruction" id="drag-instruction">
-                        <p><i class="fa-solid fa-hand-pointer"></i> Haz clic y arrastra el imán central</p>
+                <aside class="glass-card method-summary">
+                    <span class="method-kicker">Atención integral</span>
+                    <h3>Un equipo para varias necesidades técnicas</h3>
+                    <p>
+                        El enfoque de IMANTEK es resolver requerimientos reales de operación: fallas, montajes, mejoras, automatización, soporte tecnológico y suministro de materiales.
+                    </p>
+                    <div class="coverage-grid">
+                        <span><i class="fa-solid fa-circle-check"></i> Preventivo</span>
+                        <span><i class="fa-solid fa-circle-check"></i> Correctivo</span>
+                        <span><i class="fa-solid fa-circle-check"></i> Montajes</span>
+                        <span><i class="fa-solid fa-circle-check"></i> Automatización</span>
+                        <span><i class="fa-solid fa-circle-check"></i> TI e IoT</span>
+                        <span><i class="fa-solid fa-circle-check"></i> Suministros</span>
                     </div>
-                </div>
+                    <a href="#contacto" class="btn-primary method-cta">
+                        <span>Solicitar Evaluación</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </aside>
             </div>
         </div>
     </section>
@@ -438,17 +449,17 @@
         <div class="footer-container">
             <div class="footer-brand">
                 <a href="#hero" class="footer-logo">
-                    <span class="logo-icon"><i class="fa-solid fa-magnet"></i></span>
+                    <span class="logo-icon"><i class="fa-solid fa-industry"></i></span>
                     <span class="logo-text">IMAN<span class="highlight">TEK</span></span>
                 </a>
-                <p>Ingeniería y Mantenimiento Técnico de Alta Precisión.</p>
+                <p>Empresa prestadora de servicios técnicos para industria, comercio y hogares.</p>
             </div>
             <div class="footer-links">
                 <h4>Enlaces Rápidos</h4>
                 <a href="#hero">Inicio</a>
                 <a href="#nosotros">Nosotros</a>
                 <a href="#servicios">Servicios</a>
-                <a href="#simulador">Interactividad</a>
+                <a href="#metodologia">Cómo trabajamos</a>
             </div>
             <div class="footer-copy">
                 <p>&copy; 2026 Imantek S.A.S. Todos los derechos reservados.</p>

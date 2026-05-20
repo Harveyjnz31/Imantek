@@ -10,7 +10,7 @@
     --glass-border: rgba(255, 255, 255, 0.08);
     --glass-glow: rgba(0, 210, 255, 0.03);
     
-    /* Acentos Magnéticos (Polo Norte / Polo Sur) */
+    /* Acentos de marca */
     --accent-cyan: hsl(191, 100%, 50%);
     --accent-cyan-hover: hsl(191, 100%, 43%);
     --accent-cyan-rgb: 0, 210, 255;
@@ -53,9 +53,9 @@ body {
     font-family: var(--font-body);
     line-height: 1.6;
     overflow-x: hidden;
-    background-image: 
-        radial-gradient(at 0% 0%, rgba(var(--accent-cyan-rgb), 0.05) 0px, transparent 50%),
-        radial-gradient(at 100% 100%, rgba(var(--accent-rose-rgb), 0.03) 0px, transparent 50%);
+    background-image:
+        linear-gradient(135deg, rgba(var(--accent-cyan-rgb), 0.04), transparent 32%),
+        linear-gradient(315deg, rgba(var(--accent-rose-rgb), 0.035), transparent 34%);
     background-attachment: fixed;
 }
 
@@ -247,7 +247,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .logo-icon i {
     color: var(--accent-rose);
     filter: drop-shadow(0 0 8px rgba(var(--accent-rose-rgb), 0.6));
-    animation: pulseMagnet 3s infinite ease-in-out;
+    animation: pulseService 3s infinite ease-in-out;
 }
 
 .nav-menu {
@@ -333,26 +333,15 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
     pointer-events: none;
 }
 
-.glow-orb {
+.hero-grid-pattern {
     position: absolute;
-    border-radius: 50%;
-    filter: blur(100px);
-}
-
-.orb-1 {
-    top: -10%;
-    left: -10%;
-    width: 40%;
-    height: 40%;
-    background: rgba(var(--accent-cyan-rgb), 0.08);
-}
-
-.orb-2 {
-    bottom: 10%;
-    right: -10%;
-    width: 50%;
-    height: 50%;
-    background: rgba(var(--accent-rose-rgb), 0.05);
+    inset: 0;
+    opacity: 0.24;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+    background-size: 80px 80px;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), transparent 82%);
 }
 
 .hero-container {
@@ -449,9 +438,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 
 .stat-row {
     display: grid;
-    grid-template-columns: 100px 1fr 40px;
+    grid-template-columns: minmax(105px, 0.9fr) 1fr minmax(68px, auto);
     align-items: center;
-    gap: 15px;
+    gap: 12px;
     font-size: 0.8rem;
 }
 
@@ -478,14 +467,24 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
     text-align: right;
 }
 
-/* Efecto de Onda Magnética */
-.card-pulse-visual {
-    position: relative;
-    height: 100px;
+.card-service-visual {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    gap: 18px;
     margin-bottom: 20px;
+}
+
+.service-signal {
+    width: 84px;
+    height: 84px;
+    display: grid;
+    place-items: center;
+    margin: 0 auto;
+    border: 1px solid rgba(var(--accent-cyan-rgb), 0.2);
+    border-radius: 18px;
+    background:
+        linear-gradient(135deg, rgba(var(--accent-cyan-rgb), 0.1), transparent),
+        rgba(255, 255, 255, 0.025);
 }
 
 .core-icon {
@@ -496,22 +495,27 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
     animation: floatIcon 4s infinite ease-in-out;
 }
 
-.magnetic-wave {
-    position: absolute;
-    width: 60px;
-    height: 60px;
-    border: 1px solid rgba(var(--accent-cyan-rgb), 0.25);
-    border-radius: 50%;
-    z-index: 1;
-    animation: expandWave 2.5s infinite linear;
+.scope-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
 }
 
-.magnetic-wave.delay-1 {
-    animation-delay: 0.8s;
+.scope-list span {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    min-height: 38px;
+    padding: 8px 10px;
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    color: var(--text-muted);
+    font-size: 0.78rem;
+    background: rgba(255, 255, 255, 0.025);
 }
 
-.magnetic-wave.delay-2 {
-    animation-delay: 1.6s;
+.scope-list i {
+    color: var(--accent-cyan);
 }
 
 .card-footer-text {
@@ -796,192 +800,110 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 
 /* ==========================================================================
-   SECCIÓN SIMULADOR DE MAGNETISMO
+   SECCIÓN METODOLOGÍA
    ========================================================================== */
-.simulator-section {
+.method-section {
     padding: 100px 24px;
     background: var(--bg-secondary);
 }
 
-.simulator-container {
+.method-container {
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.sim-wrapper {
+.method-layout {
     display: grid;
-    grid-template-columns: 1fr 1.3fr;
+    grid-template-columns: 1.25fr 0.75fr;
     gap: 40px;
-    align-items: center;
+    align-items: start;
 }
 
-.sim-controls {
-    padding: 40px;
+.method-steps {
+    display: grid;
+    gap: 18px;
+}
+
+.method-step {
+    display: grid;
+    grid-template-columns: 74px 1fr;
+    gap: 24px;
+    padding: 28px;
     border-color: rgba(255, 255, 255, 0.05);
 }
 
-.sim-controls h3 {
-    font-size: 1.5rem;
-    color: var(--text-white);
-    margin-bottom: 12px;
+.method-step:hover {
+    transform: translateY(-3px);
+    border-color: rgba(var(--accent-cyan-rgb), 0.25);
 }
 
-.sim-desc {
-    font-size: 0.9rem;
-    color: var(--text-muted);
-    margin-bottom: 30px;
-}
-
-.control-group {
-    margin-bottom: 24px;
-}
-
-.control-group label {
-    display: block;
-    font-size: 0.8rem;
+.step-number {
+    width: 56px;
+    height: 56px;
+    display: grid;
+    place-items: center;
+    border-radius: 14px;
+    background: rgba(var(--accent-cyan-rgb), 0.08);
+    color: var(--accent-cyan);
     font-family: var(--font-heading);
-    font-weight: 600;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+}
+
+.method-step h3, .method-summary h3 {
+    color: var(--text-white);
+    margin-bottom: 10px;
+}
+
+.method-step p, .method-summary p {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+}
+
+.method-summary {
+    padding: 36px;
+    border-color: rgba(var(--accent-cyan-rgb), 0.14);
+    position: sticky;
+    top: 96px;
+}
+
+.method-kicker {
+    display: inline-flex;
+    margin-bottom: 14px;
+    color: var(--accent-rose);
+    font-family: var(--font-heading);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--text-muted);
-    margin-bottom: 8px;
 }
 
-/* Slider CSS */
-.slider {
-    width: 100%;
-    -webkit-appearance: none;
-    appearance: none;
-    height: 6px;
-    background: rgba(255, 255, 255, 0.08);
-    border-radius: 3px;
-    outline: none;
+.coverage-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 26px 0;
 }
 
-.slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    background: var(--accent-cyan);
-    box-shadow: var(--glow-cyan);
-    cursor: pointer;
-    transition: var(--transition-smooth);
-}
-
-.slider::-webkit-slider-thumb:hover {
-    transform: scale(1.2);
-}
-
-.slider-labels {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.7rem;
-    color: var(--text-muted);
-    margin-top: 6px;
-}
-
-/* Toggle Botón */
-.btn-toggle {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid var(--glass-border);
-    color: var(--text-white);
-    padding: 10px 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-family: var(--font-heading);
-    font-weight: 600;
-    font-size: 0.85rem;
+.coverage-grid span {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    transition: var(--transition-smooth);
-}
-
-.btn-toggle:hover {
-    border-color: rgba(var(--accent-rose-rgb), 0.5);
-    background: rgba(var(--accent-rose-rgb), 0.05);
-    color: var(--accent-rose);
-}
-
-.checkbox-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 8px;
-}
-
-.checkbox-wrapper input[type="checkbox"] {
-    width: 16px;
-    height: 16px;
-    accent-color: var(--accent-cyan);
-}
-
-.checkbox-wrapper label {
-    text-transform: none;
-    letter-spacing: 0;
-    margin-bottom: 0;
-}
-
-/* Info Box */
-.sim-info-box {
-    display: flex;
-    gap: 12px;
-    background: rgba(var(--accent-cyan-rgb), 0.03);
-    border: 1px dashed rgba(var(--accent-cyan-rgb), 0.2);
-    padding: 15px;
+    min-height: 40px;
+    padding: 8px 10px;
     border-radius: 8px;
-    margin-top: 30px;
-}
-
-.info-icon i {
-    color: var(--accent-cyan);
-}
-
-.sim-info-box p {
-    font-size: 0.78rem;
+    background: rgba(255, 255, 255, 0.03);
     color: var(--text-muted);
-    line-height: 1.4;
+    font-size: 0.82rem;
 }
 
-/* Canvas del Simulador */
-.sim-canvas-container {
-    padding: 10px;
-    border-color: rgba(var(--accent-cyan-rgb), 0.15);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    min-height: 400px;
-    background: #07090d;
-}
-
-#magnetic-canvas {
-    width: 100%;
-    height: 100%;
-    max-width: 600px;
-    max-height: 400px;
-    background: transparent;
-    cursor: grab;
-}
-
-#magnetic-canvas:active {
-    cursor: grabbing;
-}
-
-.canvas-overlay-instruction {
-    position: absolute;
-    bottom: 20px;
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(5px);
-    border: 1px solid var(--glass-border);
-    padding: 6px 16px;
-    border-radius: 20px;
-    font-size: 0.75rem;
+.coverage-grid i {
     color: var(--accent-cyan);
-    pointer-events: none;
-    animation: pulseInstruction 2s infinite ease-in-out;
+}
+
+.method-cta {
+    width: 100%;
+    justify-content: center;
 }
 
 /* ==========================================================================
@@ -1283,7 +1205,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 /* ==========================================================================
    ANIMACIONES CLAVE (KEYFRAMES)
    ========================================================================== */
-@keyframes pulseMagnet {
+@keyframes pulseService {
     0%, 100% {
         transform: scale(1) rotate(0deg);
         filter: drop-shadow(0 0 8px rgba(var(--accent-rose-rgb), 0.6));
@@ -1302,22 +1224,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 @keyframes floatIcon {
     0%, 100% { transform: translateY(0) rotate(0deg); }
     50% { transform: translateY(-8px) rotate(5deg); }
-}
-
-@keyframes expandWave {
-    0% {
-        transform: scale(0.8);
-        opacity: 0.8;
-    }
-    100% {
-        transform: scale(2.2);
-        opacity: 0;
-    }
-}
-
-@keyframes pulseInstruction {
-    0%, 100% { opacity: 0.6; }
-    50% { opacity: 1; }
 }
 
 /* ==========================================================================
@@ -1339,9 +1245,13 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
         justify-content: center;
     }
     
-    .about-grid, .sim-wrapper, .contact-grid {
+    .about-grid, .method-layout, .contact-grid {
         grid-template-columns: 1fr;
         gap: 40px;
+    }
+
+    .method-summary {
+        position: static;
     }
     
     .services-grid {
@@ -1396,6 +1306,15 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
     }
     
     .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .method-step {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .coverage-grid, .scope-list {
         grid-template-columns: 1fr;
     }
     

@@ -1,6 +1,6 @@
 # IMANTEK S.A.S. | Ingeniería y Mantenimiento Técnico
 
-Bienvenido al repositorio oficial del portal web de **IMANTEK** (INGMANTTEC - Ingeniería y Mantenimiento Técnico). Esta plataforma web interactiva de alto rendimiento y diseño premium ha sido desarrollada en HTML, CSS y JavaScript modernos, reflejando el portafolio comercial de servicios especializados de la empresa e integrando un laboratorio interactivo electromagnético.
+Bienvenido al repositorio oficial del portal web de **IMANTEK** (INGMANTTEC - Ingeniería y Mantenimiento Técnico). Esta plataforma web de alto rendimiento y diseño premium ha sido desarrollada en HTML, CSS y JavaScript modernos para presentar a IMANTEK como empresa prestadora de servicios técnicos integrales en mantenimiento, ingeniería, automatización, tecnología, suministros y soporte operativo.
 
 ## 🚀 Acerca de Imantek
 
@@ -62,9 +62,10 @@ El portal web expone de manera estructurada e interactiva las 6 áreas comercial
 ## 💻 Características Técnicas de la Web
 
 El desarrollo se enfoca en la excelencia estética (Rich Aesthetics) y de rendimiento mediante:
-*   **Acentos Visuales Magnéticos:** Uso de una paleta HSL oscura en fondo con acentos de brillo electromagnético (Cian para Polo Sur/Atracción y Rosa profundo para Polo Norte/Repulsión).
+*   **Identidad Visual Técnica:** Uso de una paleta HSL oscura con acentos cian y rosa para proyectar precisión, tecnología y confiabilidad operativa.
 *   **Efecto Glassmorphism:** Tarjetas de cristal esmerilado con bordes degradados interactivos y difuminado de fondo (`backdrop-filter`).
-*   **Simulador Magnético en Canvas:** Un laboratorio en tiempo real desarrollado en JavaScript que simula de manera físicamente precisa un campo de dipolo magnético. El usuario puede arrastrar el imán bipolar, ajustar la densidad e intensidad del campo magnético y ver líneas de fuerza y partículas (flujo de electrones) reaccionar de manera dinámica.
+*   **Metodología de Servicio:** Sección dedicada al proceso de atención: diagnóstico, planeación, ejecución en campo, entrega y seguimiento técnico.
+*   **Flujo de Cotización por WhatsApp:** Los servicios y el formulario de contacto preparan una solicitud estructurada para iniciar conversación comercial de forma directa.
 *   **SEO y Estructura:** Título semántico, metadescripción optimizada, jerarquía de encabezados HTML5 y diseño totalmente responsivo mediante Flexbox y CSS Grid.
 
 ---
