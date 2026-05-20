@@ -23,10 +23,10 @@
                 <span class="logo-icon"><i class="fa-solid fa-magnet"></i></span>
                 <span class="logo-text">IMAN<span class="highlight">TEK</span></span>
             </a>
-            <button class="nav-toggle" id="nav-toggle-btn" aria-label="Abrir menú">
+            <button class="nav-toggle" id="nav-toggle-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="navigation-menu">
                 <i class="fa-solid fa-bars"></i>
             </button>
-            <nav class="nav-menu" id="navigation-menu">
+            <nav class="nav-menu" id="navigation-menu" aria-label="Navegación principal">
                 <a href="#hero" class="nav-link active" id="nav-home">Inicio</a>
                 <a href="#nosotros" class="nav-link" id="nav-about">Nosotros</a>
                 <a href="#servicios" class="nav-link" id="nav-services">Servicios</a>
@@ -172,7 +172,7 @@
                     <div class="service-icon"><i class="fa-solid fa-bolt"></i></div>
                     <h3>Ingeniería Eléctrica y Electrónica</h3>
                     <p class="service-summary">Montajes y mantenimiento eléctrico de potencia, máquinas eléctricas y diseño de tableros.</p>
-                    <ul class="service-details">
+                    <ul class="service-details" id="srv-electrica-details">
                         <li><i class="fa-solid fa-circle-check"></i> Montajes eléctricos en el sector industrial, comercial y residencial.</li>
                         <li><i class="fa-solid fa-circle-check"></i> Mantenimiento preventivo y correctivo en sitio de redes eléctricas.</li>
                         <li><i class="fa-solid fa-circle-check"></i> Mantenimiento y reparación especializada de máquinas eléctricas.</li>
@@ -180,7 +180,10 @@
                         <li><i class="fa-solid fa-circle-check"></i> Diseño, estructuración y armado de tableros eléctricos certificados.</li>
                         <li><i class="fa-solid fa-circle-check"></i> Elaboración y levantamiento de planos eléctricos.</li>
                     </ul>
-                    <button class="srv-toggle-btn" id="btn-srv-electrica">Ver detalles <i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="service-actions">
+                        <button class="srv-toggle-btn" id="btn-srv-electrica" type="button" aria-expanded="false" aria-controls="srv-electrica-details">Ver detalles <i class="fa-solid fa-chevron-down"></i></button>
+                        <button class="srv-quote-btn" type="button" data-service="Ingeniería Eléctrica y Electrónica"><i class="fa-brands fa-whatsapp"></i><span>Cotizar</span></button>
+                    </div>
                 </div>
 
                 <!-- Servicio 2: Mecánica y Metalmecánica -->
@@ -188,14 +191,17 @@
                     <div class="service-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
                     <h3>Ingeniería Mecánica y Metalmecánica</h3>
                     <p class="service-summary">Montajes industriales, mantenimiento de maquinaria pesada, soldadura especial y obras civiles.</p>
-                    <ul class="service-details">
+                    <ul class="service-details" id="srv-mecanica-details">
                         <li><i class="fa-solid fa-circle-check"></i> Mantenimiento y montajes industriales de gran envergadura.</li>
                         <li><i class="fa-solid fa-circle-check"></i> Cuadrillas expertas en mantenimiento mecánico y automatización de soporte continuo.</li>
                         <li><i class="fa-solid fa-circle-check"></i> Fabricación e instalación de estructuras metálicas de alta resistencia.</li>
                         <li><i class="fa-solid fa-circle-check"></i> Soldadura especial: Acero inoxidable, acero al carbón, fundición gris y autógena.</li>
                         <li><i class="fa-solid fa-circle-check"></i> Obras civiles industriales y residenciales complementarias.</li>
                     </ul>
-                    <button class="srv-toggle-btn" id="btn-srv-mecanica">Ver detalles <i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="service-actions">
+                        <button class="srv-toggle-btn" id="btn-srv-mecanica" type="button" aria-expanded="false" aria-controls="srv-mecanica-details">Ver detalles <i class="fa-solid fa-chevron-down"></i></button>
+                        <button class="srv-quote-btn" type="button" data-service="Ingeniería Mecánica y Metalmecánica"><i class="fa-brands fa-whatsapp"></i><span>Cotizar</span></button>
+                    </div>
                 </div>
 
                 <!-- Servicio 3: Automatización y Control -->
@@ -203,14 +209,17 @@
                     <div class="service-icon"><i class="fa-solid fa-network-wired"></i></div>
                     <h3>Automatización y Control</h3>
                     <p class="service-summary">Programación industrial, sistemas SCADA, redes industriales y actualizaciones de tecnología.</p>
-                    <ul class="service-details">
+                    <ul class="service-details" id="srv-automatizacion-details">
                         <li><i class="fa-solid fa-circle-check"></i> Programación avanzada de PLC's y desarrollo de interfaces HMI.</li>
                         <li><i class="fa-solid fa-circle-check"></i> Diseño e implementación de sistemas de adquisición y monitoreo SCADA.</li>
                         <li><i class="fa-solid fa-circle-check"></i> Configuración y seguridad en redes de comunicación industriales.</li>
                         <li><i class="fa-solid fa-circle-check"></i> Selección, instalación y comisionamiento de variadores de velocidad.</li>
                         <li><i class="fa-solid fa-circle-check"></i> Migraciones y actualizaciones tecnológicas de sistemas de control obsoletos.</li>
                     </ul>
-                    <button class="srv-toggle-btn" id="btn-srv-automatizacion">Ver detalles <i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="service-actions">
+                        <button class="srv-toggle-btn" id="btn-srv-automatizacion" type="button" aria-expanded="false" aria-controls="srv-automatizacion-details">Ver detalles <i class="fa-solid fa-chevron-down"></i></button>
+                        <button class="srv-quote-btn" type="button" data-service="Automatización y Control"><i class="fa-brands fa-whatsapp"></i><span>Cotizar</span></button>
+                    </div>
                 </div>
 
                 <!-- Servicio 4: Instrumentación -->
@@ -218,12 +227,15 @@
                     <div class="service-icon"><i class="fa-solid fa-gauge-high"></i></div>
                     <h3>Instrumentación de Procesos</h3>
                     <p class="service-summary">Ingeniería de detalle, planos P&ID, selección, calibración y montaje de instrumentación industrial.</p>
-                    <ul class="service-details">
+                    <ul class="service-details" id="srv-instrumentacion-details">
                         <li><i class="fa-solid fa-circle-check"></i> Elaboración de ingeniería de instrumentación y diagramas de flujo.</li>
                         <li><i class="fa-solid fa-circle-check"></i> Levantamiento técnico y desarrollo de planos de tuberías e instrumentación P&ID.</li>
                         <li><i class="fa-solid fa-circle-check"></i> Selección, dimensionamiento, instalación y calibración de instrumentos de medición.</li>
                     </ul>
-                    <button class="srv-toggle-btn" id="btn-srv-instrumentacion">Ver detalles <i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="service-actions">
+                        <button class="srv-toggle-btn" id="btn-srv-instrumentacion" type="button" aria-expanded="false" aria-controls="srv-instrumentacion-details">Ver detalles <i class="fa-solid fa-chevron-down"></i></button>
+                        <button class="srv-quote-btn" type="button" data-service="Instrumentación de Procesos"><i class="fa-brands fa-whatsapp"></i><span>Cotizar</span></button>
+                    </div>
                 </div>
 
                 <!-- Servicio 5: TI, Software, Redes e IoT -->
@@ -231,14 +243,17 @@
                     <div class="service-icon"><i class="fa-solid fa-laptop-code"></i></div>
                     <h3>TI, Software, Redes y Datos (IoT)</h3>
                     <p class="service-summary">Desarrollo de software a medida, e-commerce, Internet de las Cosas (IoT) y soporte TI corporativo.</p>
-                    <ul class="service-details">
+                    <ul class="service-details" id="srv-software-details">
                         <li><i class="fa-solid fa-circle-check"></i> Desarrollo de Software a la medida para aplicaciones Web y Móviles.</li>
                         <li><i class="fa-solid fa-circle-check"></i> Diseño y desarrollo de portales Web profesionales y plataformas E-commerce.</li>
                         <li><i class="fa-solid fa-circle-check"></i> Proyectos de IoT (Internet de las Cosas) aplicados a domótica e industria 4.0.</li>
                         <li><i class="fa-solid fa-circle-check"></i> Diseño de infraestructuras robustas de TI y redes de comunicación.</li>
                         <li><i class="fa-solid fa-circle-check"></i> Consultorías tecnológicas estratégicas y soporte técnico de TI integral.</li>
                     </ul>
-                    <button class="srv-toggle-btn" id="btn-srv-software">Ver detalles <i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="service-actions">
+                        <button class="srv-toggle-btn" id="btn-srv-software" type="button" aria-expanded="false" aria-controls="srv-software-details">Ver detalles <i class="fa-solid fa-chevron-down"></i></button>
+                        <button class="srv-quote-btn" type="button" data-service="TI, Software, Redes e IoT"><i class="fa-brands fa-whatsapp"></i><span>Cotizar</span></button>
+                    </div>
                 </div>
 
                 <!-- Servicio 6: Suministro y Transporte -->
@@ -246,12 +261,15 @@
                     <div class="service-icon"><i class="fa-solid fa-truck-ramp-box"></i></div>
                     <h3>Suministro y Transporte Técnico</h3>
                     <p class="service-summary">Logística, distribución y proveeduría de insumos, materiales y herramientas especializadas.</p>
-                    <ul class="service-details">
+                    <ul class="service-details" id="srv-suministros-details">
                         <li><i class="fa-solid fa-circle-check"></i> Proveeduría de equipos, repuestos e insumos eléctricos y mecánicos.</li>
                         <li><i class="fa-solid fa-circle-check"></i> Logística y distribución técnica segura de materiales de ingeniería en sitio.</li>
                         <li><i class="fa-solid fa-circle-check"></i> Soluciones integrales de aprovisionamiento de herramientas industriales.</li>
                     </ul>
-                    <button class="srv-toggle-btn" id="btn-srv-suministros">Ver detalles <i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="service-actions">
+                        <button class="srv-toggle-btn" id="btn-srv-suministros" type="button" aria-expanded="false" aria-controls="srv-suministros-details">Ver detalles <i class="fa-solid fa-chevron-down"></i></button>
+                        <button class="srv-quote-btn" type="button" data-service="Suministros y Transporte Técnico"><i class="fa-brands fa-whatsapp"></i><span>Cotizar</span></button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -270,7 +288,7 @@
                 <div class="sim-controls glass-card">
                     <h3>Panel de Control</h3>
                     <p class="sim-desc">
-                        Interactúa con la esencia de nuestro nombre. **Arrastra el imán** en el laboratorio visual para ver las líneas de fuerza magnética e inducción reaccionar dinámicamente en tiempo real.
+                        Interactúa con la esencia de nuestro nombre. <strong>Arrastra el imán</strong> en el laboratorio visual para ver las líneas de fuerza magnética e inducción reaccionar dinámicamente en tiempo real.
                     </p>
                     <div class="control-group">
                         <label for="magnet-strength">Intensidad del Campo Magnético</label>
@@ -281,7 +299,7 @@
                         </div>
                     </div>
                     <div class="control-group">
-                        <label for="magnet-poles">Orientación de Polos</label>
+                        <label for="btn-reverse-poles">Orientación de Polos</label>
                         <button class="btn-toggle" id="btn-reverse-poles">
                             <i class="fa-solid fa-right-left"></i>
                             <span>Invertir Polos (N &harr; S)</span>
@@ -305,7 +323,7 @@
                 </div>
 
                 <div class="sim-canvas-container glass-card">
-                    <canvas id="magnetic-canvas" width="600" height="400"></canvas>
+                    <canvas id="magnetic-canvas" width="600" height="400" aria-label="Simulador visual de campo magnético de IMANTEK">Simulador visual de campo magnético de IMANTEK.</canvas>
                     <div class="canvas-overlay-instruction" id="drag-instruction">
                         <p><i class="fa-solid fa-hand-pointer"></i> Haz clic y arrastra el imán central</p>
                     </div>
@@ -369,20 +387,20 @@
                 <!-- Formulario de Contacto -->
                 <div class="glass-card contact-form-card">
                     <h3>Enviar Mensaje</h3>
-                    <form id="contact-form-handler" onsubmit="event.preventDefault(); alert('¡Muchas gracias por su mensaje! Harvey Jimenez se pondrá en contacto pronto.');">
+                    <form id="contact-form-handler">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="form-name">Nombre Completo *</label>
                                 <div class="input-wrapper">
                                     <i class="fa-solid fa-user"></i>
-                                    <input type="text" id="form-name" placeholder="Ej. Juan Pérez" required>
+                                    <input type="text" id="form-name" name="nombre" placeholder="Ej. Juan Pérez" autocomplete="name" required>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="form-phone">Teléfono de Contacto *</label>
                                 <div class="input-wrapper">
                                     <i class="fa-solid fa-phone"></i>
-                                    <input type="tel" id="form-phone" placeholder="Ej. +57 300 000 0000" required>
+                                    <input type="tel" id="form-phone" name="telefono" placeholder="Ej. +57 300 000 0000" autocomplete="tel" inputmode="tel" required>
                                 </div>
                             </div>
                         </div>
@@ -390,7 +408,7 @@
                             <label for="form-service">Servicio de Interés</label>
                             <div class="input-wrapper">
                                 <i class="fa-solid fa-screwdriver-wrench"></i>
-                                <select id="form-service">
+                                <select id="form-service" name="servicio">
                                     <option value="electrica">Ingeniería Eléctrica y Electrónica</option>
                                     <option value="mecanica">Ingeniería Mecánica y Metalmecánica</option>
                                     <option value="automatizacion" selected>Automatización y Control</option>
@@ -402,12 +420,13 @@
                         </div>
                         <div class="form-group">
                             <label for="form-message">Descripción de su Requerimiento *</label>
-                            <textarea id="form-message" rows="5" placeholder="Cuéntenos detalladamente el requerimiento o la falla del equipo..." required></textarea>
+                            <textarea id="form-message" name="mensaje" rows="5" placeholder="Cuéntenos detalladamente el requerimiento o la falla del equipo..." minlength="12" required></textarea>
                         </div>
                         <button type="submit" class="btn-submit" id="submit-contact-form">
                             <span>Enviar Solicitud</span>
                             <i class="fa-solid fa-paper-plane"></i>
                         </button>
+                        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
                     </form>
                 </div>
             </div>

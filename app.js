@@ -11,23 +11,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const navigationMenu = document.getElementById('navigation-menu');
     
     if (navToggleBtn && navigationMenu) {
-        navToggleBtn.addEventListener('click', () => {
-            navigationMenu.classList.toggle('active');
+        const setMenuState = (isOpen) => {
+            navigationMenu.classList.toggle('active', isOpen);
+            navToggleBtn.setAttribute('aria-expanded', String(isOpen));
+            navToggleBtn.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+
             const icon = navToggleBtn.querySelector('i');
-            if (navigationMenu.classList.contains('active')) {
-                icon.classList.replace('fa-bars', 'fa-xmark');
-            } else {
-                icon.classList.replace('fa-xmark', 'fa-bars');
+            if (icon) {
+                icon.classList.toggle('fa-bars', !isOpen);
+                icon.classList.toggle('fa-xmark', isOpen);
             }
+        };
+
+        navToggleBtn.addEventListener('click', () => {
+            setMenuState(!navigationMenu.classList.contains('active'));
         });
         
         // Cerrar menú al hacer clic en un enlace
         const navLinks = navigationMenu.querySelectorAll('.nav-link, .nav-btn');
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
-                navigationMenu.classList.remove('active');
-                const icon = navToggleBtn.querySelector('i');
-                icon.classList.replace('fa-xmark', 'fa-bars');
+                setMenuState(false);
             });
         });
     }
@@ -66,19 +70,22 @@ document.addEventListener('DOMContentLoaded', () => {
     srvToggleButtons.forEach(btn => {
         btn.addEventListener('click', () => {
             const parentCard = btn.closest('.service-card');
+            if (!parentCard) return;
+
             const detailsList = parentCard.querySelector('.service-details');
+            if (!detailsList) return;
             
             // Alternar estado activo
             btn.classList.toggle('active');
             detailsList.classList.toggle('show');
+            const isExpanded = detailsList.classList.contains('show');
+            btn.setAttribute('aria-expanded', String(isExpanded));
             
             // Actualizar texto del botón
-            const chevron = btn.querySelector('i');
-            if (detailsList.classList.contains('show')) {
+            if (isExpanded) {
                 btn.innerHTML = `Ocultar detalles <i class="fa-solid fa-chevron-up"></i>`;
                 parentCard.style.borderColor = 'rgba(0, 210, 255, 0.4)';
             } else {
-                const isRose = parentCard.id === 'srv-mecanica' || parentCard.id === 'srv-suministros';
                 btn.innerHTML = `Ver detalles <i class="fa-solid fa-chevron-down"></i>`;
                 parentCard.style.borderColor = 'rgba(255, 255, 255, 0.03)';
             }
@@ -86,7 +93,98 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ---------------------------------------------------------
-    // 4. SIMULADOR DE CAMPO ELECTROMAGNÉTICO INTERACTIVO (CANVAS)
+    // 4. FLUJO DE COTIZACIÓN POR WHATSAPP
+    // ---------------------------------------------------------
+    const whatsappPhone = '573045467071';
+    const quoteButtons = document.querySelectorAll('.srv-quote-btn');
+    const contactSection = document.getElementById('contacto');
+    const contactForm = document.getElementById('contact-form-handler');
+    const formStatus = document.getElementById('form-status');
+    const formName = document.getElementById('form-name');
+    const formPhone = document.getElementById('form-phone');
+    const formService = document.getElementById('form-service');
+    const formMessage = document.getElementById('form-message');
+
+    function setFormStatus(message, type = 'info') {
+        if (!formStatus) return;
+        formStatus.textContent = message;
+        formStatus.className = `form-status ${type}`;
+    }
+
+    function selectServiceByLabel(serviceLabel) {
+        if (!formService || !serviceLabel) return;
+
+        const matchingOption = Array.from(formService.options).find(option => {
+            const optionLabel = option.textContent.trim().toLowerCase();
+            const requestedLabel = serviceLabel.trim().toLowerCase();
+            return optionLabel === requestedLabel || optionLabel.includes(requestedLabel);
+        });
+
+        if (matchingOption) {
+            formService.value = matchingOption.value;
+        }
+    }
+
+    quoteButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const serviceLabel = button.dataset.service || '';
+            selectServiceByLabel(serviceLabel);
+
+            if (formMessage && !formMessage.value.trim()) {
+                formMessage.value = `Hola, quiero solicitar una cotización para ${serviceLabel}. `;
+            }
+
+            if (contactSection) {
+                contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+
+            setTimeout(() => {
+                if (formMessage) formMessage.focus();
+            }, 550);
+        });
+    });
+
+    if (contactForm && formName && formPhone && formService && formMessage) {
+        contactForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            if (!contactForm.reportValidity()) {
+                setFormStatus('Revisa los campos marcados antes de enviar la solicitud.', 'error');
+                return;
+            }
+
+            const name = formName.value.trim();
+            const phone = formPhone.value.trim();
+            const serviceLabel = formService.options[formService.selectedIndex].textContent.trim();
+            const message = formMessage.value.trim();
+
+            if (name.length < 3 || phone.replace(/\D/g, '').length < 7 || message.length < 12) {
+                setFormStatus('Agrega un nombre, teléfono y descripción más completos para preparar la solicitud.', 'error');
+                return;
+            }
+
+            const whatsappMessage = [
+                `Hola, soy ${name}.`,
+                `Teléfono: ${phone}`,
+                `Servicio de interés: ${serviceLabel}`,
+                `Requerimiento: ${message}`
+            ].join('\n');
+
+            const whatsappUrl = `https://wa.me/${whatsappPhone}?text=${encodeURIComponent(whatsappMessage)}`;
+            const whatsappLink = document.createElement('a');
+            whatsappLink.href = whatsappUrl;
+            whatsappLink.target = '_blank';
+            whatsappLink.rel = 'noopener noreferrer';
+            document.body.appendChild(whatsappLink);
+            whatsappLink.click();
+            whatsappLink.remove();
+
+            setFormStatus('Solicitud lista en WhatsApp. Solo falta enviarla desde la conversación.', 'success');
+        });
+    }
+
+    // ---------------------------------------------------------
+    // 5. SIMULADOR DE CAMPO ELECTROMAGNÉTICO INTERACTIVO (CANVAS)
     // ---------------------------------------------------------
     const canvas = document.getElementById('magnetic-canvas');
     if (canvas) {

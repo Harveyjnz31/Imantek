@@ -72,6 +72,11 @@ a {
     transition: var(--transition-smooth);
 }
 
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+    outline: 2px solid var(--accent-cyan);
+    outline-offset: 3px;
+}
+
 /* Scrollbar Personalizado */
 ::-webkit-scrollbar {
     width: 8px;
@@ -727,6 +732,15 @@ a {
     transition: var(--transition-smooth);
 }
 
+.service-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: auto;
+    flex-wrap: wrap;
+}
+
 .srv-toggle-btn:hover {
     color: var(--text-white);
 }
@@ -736,7 +750,35 @@ a {
 }
 
 .srv-toggle-btn.active i {
-    transform: rotate(180deg);
+    transform: none;
+}
+
+.srv-quote-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    border: 1px solid rgba(37, 211, 102, 0.35);
+    border-radius: 999px;
+    background: rgba(37, 211, 102, 0.08);
+    color: var(--text-main);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.82rem;
+    padding: 8px 14px;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.srv-quote-btn i {
+    color: #25d366;
+    font-size: 0.95rem;
+}
+
+.srv-quote-btn:hover {
+    transform: translateY(-2px);
+    border-color: rgba(37, 211, 102, 0.65);
+    background: rgba(37, 211, 102, 0.14);
+    box-shadow: 0 0 18px rgba(37, 211, 102, 0.18);
 }
 
 /* Modificadores especiales de colores de servicios */
@@ -1117,7 +1159,7 @@ a {
     box-shadow: 0 0 10px rgba(var(--accent-cyan-rgb), 0.15);
 }
 
-.input-wrapper input:focus + i {
+.input-wrapper:focus-within i {
     color: var(--accent-cyan);
 }
 
@@ -1143,6 +1185,21 @@ a {
 .btn-submit:hover {
     box-shadow: 0 0 25px rgba(var(--accent-cyan-rgb), 0.5);
     transform: translateY(-2px);
+}
+
+.form-status {
+    min-height: 1.3rem;
+    margin-top: 14px;
+    font-size: 0.84rem;
+    color: var(--text-muted);
+}
+
+.form-status.success {
+    color: #8ff0c1;
+}
+
+.form-status.error {
+    color: var(--accent-rose);
 }
 
 /* ==========================================================================
