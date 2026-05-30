@@ -1008,6 +1008,50 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
     margin-bottom: 0;
 }
 
+.social-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.social-btn {
+    min-height: 46px;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 14px;
+    color: #ffffff;
+    font-size: 0.86rem;
+    font-weight: 700;
+    background: var(--accent-cyan);
+    border: 1px solid rgba(var(--accent-cyan-rgb), 0.18);
+    box-shadow: 0 8px 20px rgba(var(--accent-cyan-rgb), 0.16);
+}
+
+.social-btn i {
+    font-size: 1rem;
+}
+
+.social-btn:hover {
+    background: var(--accent-cyan-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(var(--accent-cyan-rgb), 0.24);
+}
+
+.social-btn-instagram {
+    background: var(--accent-rose);
+    border-color: rgba(var(--accent-rose-rgb), 0.2);
+    box-shadow: 0 8px 20px rgba(var(--accent-rose-rgb), 0.16);
+}
+
+.social-btn-instagram:hover {
+    background: var(--accent-rose-hover);
+    box-shadow: 0 10px 24px rgba(var(--accent-rose-rgb), 0.24);
+}
+
 /* Tarjeta Formulario */
 .contact-form-card {
     padding: 40px;
@@ -1201,6 +1245,32 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
     color: var(--accent-rose);
     text-transform: uppercase;
     letter-spacing: 0.05em;
+}
+
+.footer-social {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 4px;
+}
+
+.footer-social a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-cyan);
+    background: rgba(var(--accent-cyan-rgb), 0.06);
+    border: 1px solid rgba(var(--accent-cyan-rgb), 0.16);
+}
+
+.footer-social a:hover {
+    color: #ffffff;
+    background: var(--accent-cyan);
+    border-color: var(--accent-cyan);
+    transform: translateY(-2px);
+    box-shadow: var(--glow-cyan);
 }
 
 /* ==========================================================================

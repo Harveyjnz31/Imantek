@@ -5,7 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Imantek - Empresa prestadora de servicios técnicos en mantenimiento, montajes, electricidad, automatización, instrumentación, software, redes, IoT y suministros.">
     <meta name="author" content="Imantek S.A.S.">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <link rel="canonical" href="https://imantek.com.co/">
     <title>Imantek | Ingeniería y Mantenimiento Técnico Industrial</title>
+    <script>
+        if (window.location.protocol === 'http:' && window.location.hostname === 'imantek.com.co') {
+            window.location.replace('https://' + window.location.host + window.location.pathname + window.location.search + window.location.hash);
+        }
+    </script>
     <!-- Google Fonts: Outfit (Encabezados) e Inter (Cuerpo) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -360,11 +367,11 @@
                     
                     <div class="info-links-list">
                         <div class="info-link-item">
-                            <span class="info-item-icon"><i class="fa-solid fa-user-tie"></i></span>
-                            <div class="info-item-details">
-                                <span class="label">Director Técnico</span>
-                                <span class="value">Harvey Jimenez Florez</span>
-                            </div>
+                            <span class="info-item-icon"><i class="fa-solid fa-envelope"></i></span>
+                            <a href="mailto:imanteksas@gmail.com" class="info-item-details interactive">
+                                <span class="label">Correo Empresarial</span>
+                                <span class="value">imanteksas@gmail.com</span>
+                            </a>
                         </div>
                         <div class="info-link-item">
                             <span class="info-item-icon"><i class="fa-solid fa-phone"></i></span>
@@ -392,6 +399,16 @@
                     <div class="contact-cta-wrapper">
                         <h4>Mantenimiento Técnico Industrial y Tecnologías 4.0</h4>
                         <p>Comprometidos con la seguridad y la confiabilidad.</p>
+                        <div class="social-actions" aria-label="Redes sociales de Imantek">
+                            <a class="social-btn social-btn-facebook" href="https://www.facebook.com/profile.php?id=61575294598884" target="_blank" rel="noopener noreferrer" aria-label="Visitar Facebook de Imantek">
+                                <i class="fa-brands fa-facebook-f"></i>
+                                <span>Facebook</span>
+                            </a>
+                            <a class="social-btn social-btn-instagram" href="https://www.instagram.com/imanteksas?igsh=MWkyMHd6OHUxamtreQ%3D%3D&amp;utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Visitar Instagram de Imantek">
+                                <i class="fa-brands fa-instagram"></i>
+                                <span>Instagram</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -462,6 +479,14 @@
                 <a href="#metodologia">Cómo trabajamos</a>
             </div>
             <div class="footer-copy">
+                <div class="footer-social" aria-label="Redes sociales">
+                    <a href="https://www.facebook.com/profile.php?id=61575294598884" target="_blank" rel="noopener noreferrer" aria-label="Facebook de Imantek">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/imanteksas?igsh=MWkyMHd6OHUxamtreQ%3D%3D&amp;utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Imantek">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
                 <p>&copy; 2026 Imantek S.A.S. Todos los derechos reservados.</p>
                 <p class="tagline">Seguridad, Eficiencia y Excelencia Técnica</p>
             </div>

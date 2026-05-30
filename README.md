@@ -132,7 +132,7 @@ git push
 
 ## 📞 Datos de Contacto Corporativo
 
-*   **Director Técnico:** Harvey Jimenez Florez
+*   **Correo Empresarial:** imanteksas@gmail.com
 *   **Teléfono:** (+57) 304 546 7071
 *   **Dirección:** Br. Villa estrella Transv.54 #80 - 863, Cartagena de Indias, Colombia.
 *   **Eslogan Comercial:** *Seguridad, Eficiencia y Excelencia Técnica*
