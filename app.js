@@ -64,6 +64,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const srvToggleButtons = document.querySelectorAll('.srv-toggle-btn');
 
     srvToggleButtons.forEach(btn => {
+        const updateServiceToggle = (isExpanded) => {
+            btn.classList.toggle('active', isExpanded);
+            btn.setAttribute('aria-expanded', String(isExpanded));
+            btn.innerHTML = isExpanded
+                ? 'Ocultar detalles <i class="fa-solid fa-chevron-up"></i>'
+                : 'Mostrar detalles <i class="fa-solid fa-chevron-down"></i>';
+        };
+
+        const initialDetailsList = document.getElementById(btn.getAttribute('aria-controls'));
+        updateServiceToggle(Boolean(initialDetailsList && initialDetailsList.classList.contains('show')));
+
         btn.addEventListener('click', () => {
             const parentCard = btn.closest('.service-card');
             if (!parentCard) return;
@@ -73,16 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             detailsList.classList.toggle('show');
             const isExpanded = detailsList.classList.contains('show');
-            btn.classList.toggle('active', isExpanded);
-            btn.setAttribute('aria-expanded', String(isExpanded));
-
-            if (isExpanded) {
-                btn.innerHTML = 'Ocultar detalles <i class="fa-solid fa-chevron-up"></i>';
-                parentCard.style.borderColor = 'rgba(0, 210, 255, 0.4)';
-            } else {
-                btn.innerHTML = 'Ver detalles <i class="fa-solid fa-chevron-down"></i>';
-                parentCard.style.borderColor = 'rgba(255, 255, 255, 0.03)';
-            }
+            updateServiceToggle(isExpanded);
         });
     });
 
