@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Imantek">
+    <rect width="64" height="64" rx="14" fill="#f3f5f8"/>
+    <rect x="5" y="5" width="54" height="54" rx="12" fill="#ffffff" stroke="#124e8c" stroke-opacity="0.16" stroke-width="2"/>
+    <path d="M13 47V27l12 7V24l13 8v-9l13 9v15H13Z" fill="#124e8c"/>
+    <path d="M13 47h38v5H13Z" fill="#d26914"/>
+    <path d="M18 39h6v8h-6Zm11 0h6v8h-6Zm11 0h6v8h-6Z" fill="#ffffff" opacity="0.92"/>
+    <path d="M16 23h8v8l-8-4.7V23Zm22-3h8v8.2L38 23v-3Z" fill="#d26914"/>
+    <path d="M13 27 25 34V24l13 8v-9l13 9" fill="none" stroke="#ffffff" stroke-opacity="0.34" stroke-width="2" stroke-linejoin="round"/>
+</svg>
