@@ -133,6 +133,6 @@ git push
 ## 📞 Datos de Contacto Corporativo
 
 *   **Correo Empresarial:** imanteksas@gmail.com
-*   **Teléfono:** (+57) 304 546 7071
+*   **Teléfono:** (+57) 318 141 9074
 *   **Dirección:** Br. Villa estrella Transv.54 #80 - 863, Cartagena de Indias, Colombia.
 *   **Eslogan Comercial:** *Seguridad, Eficiencia y Excelencia Técnica*

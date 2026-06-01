@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ---------------------------------------------------------
     // 4. FLUJO DE COTIZACIÓN POR WHATSAPP
     // ---------------------------------------------------------
-    const whatsappPhone = '573045467071';
+    const whatsappPhone = '573181419074';
     const quoteButtons = document.querySelectorAll('.srv-quote-btn');
     const contactSection = document.getElementById('contacto');
     const contactForm = document.getElementById('contact-form-handler');
