@@ -6,31 +6,33 @@ const sectors = [
     name: 'Industrial & Logístico',
     description: 'Soluciones de ingeniería y mantenimiento preventivo/correctivo diseñadas para garantizar la continuidad operativa.',
     items: ['Plantas de producción', 'Fábricas', 'Centros de distribución', 'Bodegas'],
-    image: '/images/sector-industrial.jpg',
+    image: 'sector-industrial.jpg',
     layout: 'large', // 60% width
   },
   {
     name: 'Comercial & Retail',
     description: 'Instalaciones eléctricas, climatización y mantenimiento de infraestructura orientados a crear entornos confortables y seguros.',
     items: ['Centros comerciales', 'Hoteles', 'Restaurantes'],
-    image: '/images/sector-commercial.jpg',
+    image: 'sector-commercial.jpg',
     layout: 'small', // 40% width
   },
   {
     name: 'Salud & Corporativo',
     description: 'Soporte técnico especializado para infraestructuras con exigencias normativas estrictas.',
     items: ['Clínicas', 'Laboratorios', 'Edificios corporativos'],
-    image: '/images/sector-health.jpg',
+    image: 'sector-health.jpg',
     layout: 'small',
   },
   {
     name: 'Residencial & Copropiedades',
     description: 'Servicios preventivos programados y atención técnica oportuna para la conservación física.',
     items: ['Conjuntos residenciales', 'Condominios', 'Zonas comunes'],
-    image: '/images/sector-residential.jpg',
+    image: 'sector-residential.jpg',
     layout: 'large',
   },
 ];
+
+const imagePath = (fileName: string) => `${import.meta.env.BASE_URL}images/${fileName}`;
 
 export default function SectorsSection() {
   const headerRef = useScrollReveal<HTMLDivElement>({ translateY: 30 });
@@ -131,11 +133,13 @@ function SectorCard({ sector }: { sector: typeof sectors[0] }) {
   return (
     <div className="group h-full">
       {/* Image */}
-      <div className="overflow-hidden" style={{ aspectRatio: '16/10' }}>
+      <div className="min-h-[210px] overflow-hidden sm:min-h-0" style={{ aspectRatio: '16/10' }}>
         <img
-          src={sector.image}
+          src={imagePath(sector.image)}
           alt={sector.name}
-          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          loading="lazy"
+          decoding="async"
+          className="block h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
       </div>
 

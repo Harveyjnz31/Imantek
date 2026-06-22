@@ -1,5 +1,7 @@
 import { useScrollReveal } from '../hooks/useScrollReveal';
 
+const aboutImage = `${import.meta.env.BASE_URL}images/about-image.jpg`;
+
 export default function AboutSection() {
   const leftRef = useScrollReveal<HTMLDivElement>({
     translateX: -30,
@@ -84,9 +86,11 @@ export default function AboutSection() {
           {/* Right Column - Image */}
           <div ref={rightRef}>
             <img
-              src="/images/about-image.jpg"
+              src={aboutImage}
               alt="Ingeniero industrial IMANTEK en instalación"
-              className="h-auto w-full object-cover"
+              loading="lazy"
+              decoding="async"
+              className="block min-h-[320px] w-full object-cover sm:min-h-0"
               style={{ border: '2px solid #d4d0ca', aspectRatio: '3/4' }}
             />
           </div>
