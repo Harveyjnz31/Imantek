@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
-import ServiceNetworkCanvas from './ServiceNetworkCanvas';
+import GoldenGears from './GoldenGears';
+import { brand } from '../lib/brand-colors';
 
 const tags = ['Electricidad', 'Mantenimiento', 'Automatización', 'Instrumentación', 'TI & IoT', 'Suministros'];
 
@@ -29,19 +30,16 @@ export default function HeroSection() {
       id="hero"
       className="relative min-h-screen overflow-hidden"
       style={{
-        backgroundColor: '#1a1a1a',
+        backgroundColor: brand.charcoalDeep,
         clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 80px), 0 100%)',
       }}
     >
-      {/* Technical services signal background */}
-      <ServiceNetworkCanvas />
+      <GoldenGears />
 
-      {/* Gradient Overlay */}
       <div
         className="absolute inset-0 z-[1]"
         style={{
-          background:
-            'linear-gradient(to bottom, rgba(26,26,26,0.18) 0%, rgba(26,26,26,0.62) 100%), radial-gradient(circle at 50% 42%, rgba(196,113,59,0.08), transparent 44%)',
+          background: `linear-gradient(to bottom, rgba(16,20,20,0.25) 0%, rgba(26,26,26,0.72) 100%), radial-gradient(circle at 50% 42%, rgba(196,113,59,0.14), transparent 48%), radial-gradient(circle at 78% 18%, rgba(105,201,210,0.08), transparent 36%)`,
         }}
       />
 

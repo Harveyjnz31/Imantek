@@ -5,9 +5,14 @@
 @layer base {
   :root {
     --color-charcoal: #1a1a1a;
+    --color-charcoal-deep: #101414;
     --color-cream: #f5f3ef;
     --color-copper: #c4713b;
+    --color-copper-light: #d4854a;
+    --color-copper-bright: #f0a15f;
+    --color-copper-dark: #8a5a2b;
     --color-stone: #8a8580;
+    --color-teal: #69c9d2;
     --color-border: #d4d0ca;
     --color-border-dark: #333333;
 

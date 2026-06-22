@@ -1,8 +1,11 @@
+import { useState } from 'react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
+import { imageFallback, imagePath } from '../lib/images';
 
-const aboutImage = `${import.meta.env.BASE_URL}images/about-image.jpg`;
+const aboutImage = imagePath('about-image.jpg');
 
 export default function AboutSection() {
+  const [aboutSrc, setAboutSrc] = useState(aboutImage);
   const leftRef = useScrollReveal<HTMLDivElement>({
     translateX: -30,
     duration: 0.7,
@@ -86,10 +89,11 @@ export default function AboutSection() {
           {/* Right Column - Image */}
           <div ref={rightRef}>
             <img
-              src={aboutImage}
+              src={aboutSrc}
               alt="Ingeniero industrial IMANTEK en instalación"
               loading="lazy"
               decoding="async"
+              onError={() => setAboutSrc(imageFallback('IMANTEK'))}
               className="block min-h-[320px] w-full object-cover sm:min-h-0"
               style={{ border: '2px solid #d4d0ca', aspectRatio: '3/4' }}
             />

@@ -1,5 +1,6 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
+import { imageFallback, imagePath } from '../lib/images';
 
 const sectors = [
   {
@@ -31,8 +32,6 @@ const sectors = [
     layout: 'large',
   },
 ];
-
-const imagePath = (fileName: string) => `${import.meta.env.BASE_URL}images/${fileName}`;
 
 export default function SectorsSection() {
   const headerRef = useScrollReveal<HTMLDivElement>({ translateY: 30 });
@@ -130,15 +129,17 @@ export default function SectorsSection() {
 }
 
 function SectorCard({ sector }: { sector: typeof sectors[0] }) {
+  const [src, setSrc] = useState(imagePath(sector.image));
+
   return (
     <div className="group h-full">
-      {/* Image */}
       <div className="min-h-[210px] overflow-hidden sm:min-h-0" style={{ aspectRatio: '16/10' }}>
         <img
-          src={imagePath(sector.image)}
+          src={src}
           alt={sector.name}
           loading="lazy"
           decoding="async"
+          onError={() => setSrc(imageFallback(sector.name))}
           className="block h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
       </div>
