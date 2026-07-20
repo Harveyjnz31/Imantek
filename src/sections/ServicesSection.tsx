@@ -1,37 +1,106 @@
 import { useEffect, useRef } from 'react';
-import { Wrench, Settings, Cpu, Gauge, Thermometer, Paintbrush } from 'lucide-react';
+import { Compass, Cpu, Zap, PanelsTopLeft, Wrench, Gauge, Hammer, Building2, MonitorCog } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 
 const services = [
   {
-    icon: Wrench,
-    title: 'Mantenimiento',
-    description: 'Preventivo y correctivo de equipos industriales, eléctricos y mecánicos. Garantizamos continuidad operativa y vida útil prolongada de sus activos.',
-  },
-  {
-    icon: Settings,
-    title: 'Montajes',
-    description: 'Instalación y montaje de sistemas eléctricos, mecánicos y estructurales bajo normas de seguridad industrial.',
+    icon: Compass,
+    title: 'Servicios de Ingeniería',
+    items: [
+      'Ingeniería eléctrica',
+      'Ingeniería electrónica',
+      'Ingeniería mecánica',
+      'Ingeniería industrial',
+      'Consultoría en ingeniería',
+      'Diseño y planeación de proyectos industriales',
+      'Supervisión e interventoría técnica',
+    ],
   },
   {
     icon: Cpu,
-    title: 'Automatización',
-    description: 'Diseño e implementación de sistemas automatizados para optimizar procesos y reducir costos operativos. PLCs, HMIs y sistemas SCADA.',
+    title: 'Automatización Industrial',
+    items: [
+      'Automatización de procesos industriales',
+      'Programación de PLC',
+      'Desarrollo de interfaces HMI',
+      'Implementación de sistemas SCADA',
+      'Integración de sistemas industriales',
+      'Control e instrumentación industrial',
+    ],
+  },
+  {
+    icon: Zap,
+    title: 'Instalaciones Eléctricas',
+    items: [
+      'Instalaciones eléctricas industriales',
+      'Instalaciones eléctricas comerciales',
+      'Instalaciones eléctricas residenciales',
+      'Montajes eléctricos',
+      'Redes eléctricas industriales',
+      'Diseño y construcción de sistemas eléctricos',
+    ],
+  },
+  {
+    icon: PanelsTopLeft,
+    title: 'Tableros Eléctricos',
+    items: [
+      'Diseño de tableros eléctricos',
+      'Fabricación de tableros eléctricos',
+      'Armado de tableros eléctricos',
+      'Instalación de tableros eléctricos',
+      'Adecuación y modernización de tableros eléctricos',
+    ],
+  },
+  {
+    icon: Wrench,
+    title: 'Mantenimiento Industrial',
+    items: [
+      'Mantenimiento preventivo',
+      'Mantenimiento correctivo',
+      'Mantenimiento predictivo',
+      'Diagnóstico de fallas',
+      'Reparación de maquinaria industrial',
+      'Soporte técnico especializado',
+    ],
   },
   {
     icon: Gauge,
-    title: 'Instrumentación',
-    description: 'Instalación, calibración y gestión de instrumentos de medición y control para procesos industriales.',
+    title: 'Instrumentación y Control',
+    items: [
+      'Calibración de instrumentos',
+      'Puesta en marcha de sistemas',
+      'Optimización de procesos',
+      'Configuración de equipos de control',
+      'Instrumentación industrial',
+    ],
   },
   {
-    icon: Thermometer,
-    title: 'Refrigeración',
-    description: 'Instalación, mantenimiento y reparación de sistemas de aire acondicionado industrial, comercial y residencial.',
+    icon: Hammer,
+    title: 'Metalmecánica',
+    items: [
+      'Fabricación de estructuras metálicas',
+      'Montaje de estructuras metálicas',
+      'Mantenimiento de estructuras metálicas',
+      'Trabajos de soldadura especializada',
+    ],
   },
   {
-    icon: Paintbrush,
-    title: 'Obras Civiles',
-    description: 'Pinturas de fachadas, estructuras en drywall, remodelaciones industriales e impermeabilización.',
+    icon: Building2,
+    title: 'Obras Industriales',
+    items: [
+      'Montajes industriales',
+      'Obras civiles relacionadas con proyectos industriales',
+      'Adecuaciones técnicas para plantas industriales',
+    ],
+  },
+  {
+    icon: MonitorCog,
+    title: 'Tecnología Industrial',
+    items: [
+      'Integración tecnológica',
+      'Desarrollo de soluciones industriales',
+      'Implementación de sistemas inteligentes para procesos productivos',
+    ],
   },
 ];
 
@@ -138,13 +207,22 @@ export default function ServicesSection() {
                   {service.title}
                 </h3>
 
-                {/* Description */}
-                <p
-                  className="leading-relaxed"
-                  style={{ fontFamily: "'Inter', sans-serif", color: '#8a8580', fontSize: '15px' }}
-                >
-                  {service.description}
-                </p>
+                {/* Items */}
+                <ul className="space-y-2">
+                  {service.items.map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-start gap-2 leading-snug"
+                      style={{ fontFamily: "'Inter', sans-serif", color: '#8a8580', fontSize: '14.5px' }}
+                    >
+                      <span
+                        className="mt-[7px] h-1 w-1 flex-shrink-0 rounded-full"
+                        style={{ backgroundColor: '#c4713b' }}
+                      />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
             );
           })}
