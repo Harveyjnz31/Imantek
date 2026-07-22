@@ -141,16 +141,16 @@ export default function WhyUsSection() {
             return (
               <div
                 key={diff.title}
-                className="diff-card border p-8 transition-all duration-300 hover:border-[#c4713b]"
+                className="diff-card border p-8 transition-all duration-300 hover:border-[#009fe3]"
                 style={{ borderColor: '#333333' }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = 'rgba(196, 113, 59, 0.05)';
+                  e.currentTarget.style.backgroundColor = 'rgba(0, 159, 227, 0.1)';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.backgroundColor = 'transparent';
                 }}
               >
-                <Icon size={40} style={{ color: '#c4713b' }} strokeWidth={1.2} />
+                <Icon size={40} style={{ color: '#009fe3' }} strokeWidth={1.2} />
                 <h3
                   className="mb-3 mt-5 text-lg font-medium uppercase"
                   style={{ fontFamily: "'Space Grotesk', sans-serif", color: '#ffffff' }}
@@ -175,7 +175,7 @@ export default function WhyUsSection() {
         >
           <p
             className="mb-4 text-xs uppercase tracking-[2px]"
-            style={{ fontFamily: "'IBM Plex Mono', monospace", color: '#c4713b' }}
+            style={{ fontFamily: "'IBM Plex Mono', monospace", color: '#009fe3' }}
           >
             Contexto estratégico
           </p>

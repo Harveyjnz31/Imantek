@@ -1,8 +1,7 @@
 import { useEffect, useRef } from 'react';
-import GoldenGears from './GoldenGears';
-import { brand } from '../lib/brand-colors';
+import IndustrialBackground from './IndustrialBackground';
 
-const tags = ['Electricidad', 'Mantenimiento', 'Automatización', 'Instrumentación', 'TI & IoT', 'Suministros'];
+const tags = ['Ingeniería', 'Automatización', 'Instalaciones Eléctricas', 'Tableros', 'Mantenimiento', 'Instrumentación', 'Metalmecánica', 'Obras Industriales', 'Tecnología Industrial'];
 
 export default function HeroSection() {
   const contentRef = useRef<HTMLDivElement>(null);
@@ -30,16 +29,19 @@ export default function HeroSection() {
       id="hero"
       className="relative min-h-screen overflow-hidden"
       style={{
-        backgroundColor: brand.charcoalDeep,
+        backgroundColor: '#1a1a1a',
         clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 80px), 0 100%)',
       }}
     >
-      <GoldenGears />
+      {/* Technical industrial background */}
+      <IndustrialBackground />
 
+      {/* Gradient Overlay */}
       <div
         className="absolute inset-0 z-[1]"
         style={{
-          background: `linear-gradient(to bottom, rgba(16,20,20,0.25) 0%, rgba(26,26,26,0.72) 100%), radial-gradient(circle at 50% 42%, rgba(196,113,59,0.14), transparent 48%), radial-gradient(circle at 78% 18%, rgba(105,201,210,0.08), transparent 36%)`,
+          background:
+            'linear-gradient(90deg, rgba(7,16,25,0.74) 0%, rgba(7,16,25,0.44) 45%, rgba(7,16,25,0.82) 100%), linear-gradient(to bottom, rgba(7,16,25,0.12) 0%, rgba(7,16,25,0.84) 100%)',
         }}
       />
 
@@ -50,7 +52,7 @@ export default function HeroSection() {
       >
         <p
           className="hero-animate mb-6 text-xs uppercase tracking-[2px]"
-          style={{ fontFamily: "'IBM Plex Mono', monospace", color: '#c4713b' }}
+          style={{ fontFamily: "'IBM Plex Mono', monospace", color: '#009fe3' }}
         >
           IMANTEK S.A.S. &middot; NIT: 902069790-1
         </p>
@@ -91,10 +93,10 @@ export default function HeroSection() {
           href="https://wa.me/573181419074?text=Hola%20IMANTEK%2C%20necesito%20apoyo%20t%C3%A9cnico%20para%20un%20proyecto%20de%20ingenier%C3%ADa."
           target="_blank"
           rel="noopener noreferrer"
-          className="hero-animate px-9 py-3.5 text-xs font-medium uppercase tracking-[1.5px] text-white transition-colors duration-300 hover:bg-[#d4854a]"
+          className="hero-animate px-9 py-3.5 text-xs font-medium uppercase tracking-[1.5px] text-white transition-colors duration-300 hover:bg-[#007fb8]"
           style={{
             fontFamily: "'IBM Plex Mono', monospace",
-            backgroundColor: '#c4713b',
+            backgroundColor: '#009fe3',
           }}
         >
           Solicitar cotizaci&oacute;n

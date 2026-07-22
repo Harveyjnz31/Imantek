@@ -114,7 +114,7 @@ export default function RoadmapSection() {
         <div ref={headerRef} className="mb-14">
           <p
             className="mb-4 text-xs uppercase tracking-[2px]"
-            style={{ fontFamily: "'IBM Plex Mono', monospace", color: '#c4713b' }}
+            style={{ fontFamily: "'IBM Plex Mono', monospace", color: '#009fe3' }}
           >
             Hoja de ruta
           </p>
@@ -143,8 +143,8 @@ export default function RoadmapSection() {
                   className="year-badge mb-6 inline-block border px-4 py-1.5 text-sm"
                   style={{
                     fontFamily: "'IBM Plex Mono', monospace",
-                    color: '#c4713b',
-                    borderColor: '#c4713b',
+                    color: '#009fe3',
+                    borderColor: '#009fe3',
                   }}
                 >
                   {phase.year}
@@ -168,7 +168,7 @@ export default function RoadmapSection() {
                     >
                       <span
                         className="mt-2 inline-block h-[2px] w-3 shrink-0"
-                        style={{ backgroundColor: '#c4713b' }}
+                        style={{ backgroundColor: '#009fe3' }}
                       />
                       {item}
                     </li>

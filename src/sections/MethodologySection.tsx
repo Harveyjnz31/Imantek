@@ -86,7 +86,7 @@ export default function MethodologySection() {
         <div ref={headerRef} className="mb-12">
           <p
             className="mb-4 text-xs uppercase tracking-[2px]"
-            style={{ fontFamily: "'IBM Plex Mono', monospace", color: '#c4713b' }}
+            style={{ fontFamily: "'IBM Plex Mono', monospace", color: '#009fe3' }}
           >
             Cómo trabajamos
           </p>
@@ -113,7 +113,7 @@ export default function MethodologySection() {
                 {/* Number */}
                 <div
                   className="mb-4 text-5xl"
-                  style={{ fontFamily: "'IBM Plex Mono', monospace", color: '#c4713b' }}
+                  style={{ fontFamily: "'IBM Plex Mono', monospace", color: '#009fe3' }}
                 >
                   {step.number}
                 </div>

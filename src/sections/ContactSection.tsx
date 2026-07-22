@@ -20,7 +20,7 @@ export default function ContactSection() {
         <div ref={leftRef}>
           <p
             className="mb-4 text-xs uppercase tracking-[2px]"
-            style={{ fontFamily: "'IBM Plex Mono', monospace", color: '#c4713b' }}
+            style={{ fontFamily: "'IBM Plex Mono', monospace", color: '#009fe3' }}
           >
             Hablemos
           </p>
@@ -40,10 +40,10 @@ export default function ContactSection() {
             href="https://wa.me/573181419074?text=Hola%20IMANTEK%2C%20necesito%20apoyo%20t%C3%A9cnico%20para%20un%20proyecto%20de%20ingenier%C3%ADa."
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block px-9 py-3.5 text-xs font-medium uppercase tracking-[1.5px] text-white transition-colors duration-300 hover:bg-[#d4854a]"
+            className="inline-block px-9 py-3.5 text-xs font-medium uppercase tracking-[1.5px] text-white transition-colors duration-300 hover:bg-[#007fb8]"
             style={{
               fontFamily: "'IBM Plex Mono', monospace",
-              backgroundColor: '#c4713b',
+              backgroundColor: '#009fe3',
             }}
           >
             Solicitar cotización
@@ -55,7 +55,7 @@ export default function ContactSection() {
           <div className="mb-7">
             <p
               className="mb-2 text-xs uppercase tracking-[2px]"
-              style={{ fontFamily: "'IBM Plex Mono', monospace", color: '#c4713b' }}
+              style={{ fontFamily: "'IBM Plex Mono', monospace", color: '#009fe3' }}
             >
               Sitio web
             </p>
@@ -67,7 +67,7 @@ export default function ContactSection() {
           <div className="mb-7">
             <p
               className="mb-2 text-xs uppercase tracking-[2px]"
-              style={{ fontFamily: "'IBM Plex Mono', monospace", color: '#c4713b' }}
+              style={{ fontFamily: "'IBM Plex Mono', monospace", color: '#009fe3' }}
             >
               Correo electrónico
             </p>
@@ -79,7 +79,7 @@ export default function ContactSection() {
           <div className="mb-7">
             <p
               className="mb-2 text-xs uppercase tracking-[2px]"
-              style={{ fontFamily: "'IBM Plex Mono', monospace", color: '#c4713b' }}
+              style={{ fontFamily: "'IBM Plex Mono', monospace", color: '#009fe3' }}
             >
               Teléfono / WhatsApp
             </p>
@@ -87,7 +87,7 @@ export default function ContactSection() {
               href="https://wa.me/573181419074"
               target="_blank"
               rel="noopener noreferrer"
-              className="transition-colors hover:text-[#c4713b]"
+              className="transition-colors hover:text-[#009fe3]"
               style={{ fontFamily: "'Inter', sans-serif", color: '#cccccc', fontSize: '16px' }}
             >
               +57 318 141 9074
@@ -97,7 +97,7 @@ export default function ContactSection() {
           <div>
             <p
               className="mb-2 text-xs uppercase tracking-[2px]"
-              style={{ fontFamily: "'IBM Plex Mono', monospace", color: '#c4713b' }}
+              style={{ fontFamily: "'IBM Plex Mono', monospace", color: '#009fe3' }}
             >
               Ubicación
             </p>

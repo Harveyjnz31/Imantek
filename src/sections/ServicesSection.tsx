@@ -1,11 +1,12 @@
-import { useEffect, useRef } from 'react';
-import { Compass, Cpu, Zap, PanelsTopLeft, Wrench, Gauge, Hammer, Building2, MonitorCog } from 'lucide-react';
+import { useState, useEffect, useRef } from 'react';
+import { ChevronDown } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 
 const services = [
   {
-    icon: Compass,
     title: 'Servicios de Ingeniería',
+    description:
+      'Soluciones integrales de ingeniería para proyectos industriales de cualquier escala.',
     items: [
       'Ingeniería eléctrica',
       'Ingeniería electrónica',
@@ -17,8 +18,9 @@ const services = [
     ],
   },
   {
-    icon: Cpu,
     title: 'Automatización Industrial',
+    description:
+      'Diseño e implementación de sistemas automatizados para optimizar procesos productivos.',
     items: [
       'Automatización de procesos industriales',
       'Programación de PLC',
@@ -29,8 +31,9 @@ const services = [
     ],
   },
   {
-    icon: Zap,
     title: 'Instalaciones Eléctricas',
+    description:
+      'Diseño, montaje y construcción de sistemas eléctricos para todos los sectores.',
     items: [
       'Instalaciones eléctricas industriales',
       'Instalaciones eléctricas comerciales',
@@ -41,8 +44,9 @@ const services = [
     ],
   },
   {
-    icon: PanelsTopLeft,
     title: 'Tableros Eléctricos',
+    description:
+      'Diseño, fabricación e instalación de tableros eléctricos a medida.',
     items: [
       'Diseño de tableros eléctricos',
       'Fabricación de tableros eléctricos',
@@ -52,8 +56,9 @@ const services = [
     ],
   },
   {
-    icon: Wrench,
     title: 'Mantenimiento Industrial',
+    description:
+      'Programas de mantenimiento especializados para garantizar continuidad operativa.',
     items: [
       'Mantenimiento preventivo',
       'Mantenimiento correctivo',
@@ -64,8 +69,9 @@ const services = [
     ],
   },
   {
-    icon: Gauge,
     title: 'Instrumentación y Control',
+    description:
+      'Calibración, puesta en marcha y optimización de instrumentos y sistemas de control.',
     items: [
       'Calibración de instrumentos',
       'Puesta en marcha de sistemas',
@@ -75,8 +81,9 @@ const services = [
     ],
   },
   {
-    icon: Hammer,
     title: 'Metalmecánica',
+    description:
+      'Fabricación, montaje y mantenimiento de estructuras metálicas con soldadura especializada.',
     items: [
       'Fabricación de estructuras metálicas',
       'Montaje de estructuras metálicas',
@@ -85,8 +92,9 @@ const services = [
     ],
   },
   {
-    icon: Building2,
     title: 'Obras Industriales',
+    description:
+      'Montajes y adecuaciones técnicas para plantas e infraestructura industrial.',
     items: [
       'Montajes industriales',
       'Obras civiles relacionadas con proyectos industriales',
@@ -94,8 +102,9 @@ const services = [
     ],
   },
   {
-    icon: MonitorCog,
     title: 'Tecnología Industrial',
+    description:
+      'Integración de soluciones tecnológicas inteligentes para procesos productivos.',
     items: [
       'Integración tecnológica',
       'Desarrollo de soluciones industriales',
@@ -107,6 +116,11 @@ const services = [
 export default function ServicesSection() {
   const headerRef = useScrollReveal<HTMLDivElement>({ translateY: 30 });
   const cardsRef = useRef<HTMLDivElement>(null);
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+
+  const toggleCard = (index: number) => {
+    setExpandedIndex((prev) => (prev === index ? null : index));
+  };
 
   useEffect(() => {
     const el = cardsRef.current;
@@ -126,7 +140,7 @@ export default function ServicesSection() {
             const targetCards = entry.target.querySelectorAll('.service-card');
             targetCards.forEach((card, i) => {
               const htmlCard = card as HTMLElement;
-              htmlCard.style.transition = `opacity 0.6s ease-out ${i * 0.1}s, transform 0.6s ease-out ${i * 0.1}s`;
+              htmlCard.style.transition = `opacity 0.6s ease-out ${i * 0.08}s, transform 0.6s ease-out ${i * 0.08}s`;
               htmlCard.style.opacity = '1';
               htmlCard.style.transform = 'translateY(0)';
             });
@@ -134,7 +148,7 @@ export default function ServicesSection() {
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.05 }
     );
 
     observer.observe(el);
@@ -145,14 +159,19 @@ export default function ServicesSection() {
     <section
       id="servicios"
       className="border-t"
-      style={{ backgroundColor: '#f5f3ef', borderColor: '#d4d0ca', paddingTop: '100px', paddingBottom: '100px' }}
+      style={{
+        backgroundColor: '#f5f3ef',
+        borderColor: '#d4d0ca',
+        paddingTop: '100px',
+        paddingBottom: '100px',
+      }}
     >
       <div className="mx-auto max-w-[1200px] px-6">
         {/* Header */}
         <div ref={headerRef}>
           <p
             className="mb-4 text-xs uppercase tracking-[2px]"
-            style={{ fontFamily: "'IBM Plex Mono', monospace", color: '#c4713b' }}
+            style={{ fontFamily: "'IBM Plex Mono', monospace", color: '#009fe3' }}
           >
             Lo que hacemos
           </p>
@@ -166,63 +185,108 @@ export default function ServicesSection() {
             className="mb-12 max-w-[700px] leading-[1.7]"
             style={{ fontFamily: "'Inter', sans-serif", color: '#1a1a1a', fontSize: '17px' }}
           >
-            Ofrecemos una solución técnica completa: desde el diagnóstico hasta la ejecución y el mantenimiento continuo, bajo un mismo equipo de confianza.
+            Soluciones técnicas integrales respaldadas por nuestra cámara de
+            comercio: desde ingeniería y automatización hasta metalmecánica y
+            tecnología industrial, bajo un mismo equipo de confianza.
           </p>
         </div>
 
         {/* Service Grid */}
-        <div ref={cardsRef} className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((service) => {
-            const Icon = service.icon;
+        <div ref={cardsRef} className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {services.map((service, index) => {
+            const isExpanded = expandedIndex === index;
+
             return (
               <div
                 key={service.title}
-                className="service-card group border p-8 transition-all duration-300"
+                className="service-card group cursor-pointer border transition-all duration-300"
                 style={{
-                  borderColor: '#d4d0ca',
-                  backgroundColor: 'transparent',
+                  borderColor: isExpanded ? '#009fe3' : '#d4d0ca',
+                  borderLeftWidth: '3px',
+                  borderLeftColor: '#009fe3',
+                  backgroundColor: isExpanded
+                    ? 'rgba(0, 159, 227, 0.08)'
+                    : 'transparent',
                 }}
+                onClick={() => toggleCard(index)}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = '#c4713b';
-                  e.currentTarget.style.backgroundColor = 'rgba(196, 113, 59, 0.04)';
+                  if (!isExpanded) {
+                    e.currentTarget.style.borderColor = '#009fe3';
+                    e.currentTarget.style.backgroundColor =
+                      'rgba(0, 159, 227, 0.06)';
+                  }
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = '#d4d0ca';
-                  e.currentTarget.style.backgroundColor = 'transparent';
+                  if (!isExpanded) {
+                    e.currentTarget.style.borderColor = '#d4d0ca';
+                    e.currentTarget.style.borderLeftColor = '#009fe3';
+                    e.currentTarget.style.backgroundColor = 'transparent';
+                  }
                 }}
               >
-                {/* Icon */}
-                <div
-                  className="mb-5 flex h-12 w-12 items-center justify-center border transition-all duration-300 group-hover:bg-[rgba(196,113,59,0.1)]"
-                  style={{ borderColor: '#c4713b' }}
-                >
-                  <Icon size={24} style={{ color: '#c4713b' }} strokeWidth={1.5} />
+                {/* Card Header */}
+                <div className="flex items-start justify-between p-6 pb-4">
+                  <div className="flex items-center gap-4">
+                    <h3
+                      className="text-base font-medium uppercase leading-tight"
+                      style={{
+                        fontFamily: "'Space Grotesk', sans-serif",
+                        color: '#1a1a1a',
+                      }}
+                    >
+                      {service.title}
+                    </h3>
+                  </div>
+                  <ChevronDown
+                    size={18}
+                    className="mt-1 shrink-0 transition-transform duration-300"
+                    style={{
+                      color: '#009fe3',
+                      transform: isExpanded ? 'rotate(180deg)' : 'rotate(0deg)',
+                    }}
+                  />
                 </div>
 
-                {/* Title */}
-                <h3
-                  className="mb-3 text-lg font-medium uppercase"
-                  style={{ fontFamily: "'Space Grotesk', sans-serif", color: '#1a1a1a' }}
+                {/* Description */}
+                <p
+                  className="px-6 pb-4 leading-relaxed"
+                  style={{
+                    fontFamily: "'Inter', sans-serif",
+                    color: '#8a8580',
+                    fontSize: '14px',
+                  }}
                 >
-                  {service.title}
-                </h3>
+                  {service.description}
+                </p>
 
-                {/* Items */}
-                <ul className="space-y-2">
-                  {service.items.map((item) => (
-                    <li
-                      key={item}
-                      className="flex items-start gap-2 leading-snug"
-                      style={{ fontFamily: "'Inter', sans-serif", color: '#8a8580', fontSize: '14.5px' }}
-                    >
-                      <span
-                        className="mt-[7px] h-1 w-1 flex-shrink-0 rounded-full"
-                        style={{ backgroundColor: '#c4713b' }}
-                      />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+                {/* Expandable Sub-services */}
+                <div
+                  className="overflow-hidden transition-all duration-400 ease-in-out"
+                  style={{
+                    maxHeight: isExpanded ? '420px' : '0px',
+                    opacity: isExpanded ? 1 : 0,
+                  }}
+                >
+                  <ul className="border-t px-6 py-4" style={{ borderColor: '#e8e4de' }}>
+                    {service.items.map((item) => (
+                      <li
+                        key={item}
+                        className="flex items-start gap-3 py-1.5"
+                        style={{
+                          fontFamily: "'Inter', sans-serif",
+                          color: '#555555',
+                          fontSize: '14px',
+                        }}
+                      >
+                        <span
+                          className="mt-[7px] inline-block h-1.5 w-1.5 shrink-0 rounded-full"
+                          style={{ backgroundColor: '#009fe3' }}
+                        />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             );
           })}

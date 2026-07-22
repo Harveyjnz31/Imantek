@@ -1,4 +1,5 @@
 import ParticleField from './ParticleField';
+import BrandLogo from '../components/BrandLogo';
 
 export default function Footer() {
   return (
@@ -20,12 +21,7 @@ export default function Footer() {
         <div className="mb-16 grid gap-10 sm:grid-cols-3">
           {/* Left - Brand */}
           <div>
-            <h3
-              className="mb-2 text-3xl font-bold uppercase tracking-[4px]"
-              style={{ fontFamily: "'Space Grotesk', sans-serif", color: '#ffffff' }}
-            >
-              IMANTEK
-            </h3>
+            <BrandLogo className="mb-4 text-3xl" />
             <p
               className="text-sm"
               style={{ fontFamily: "'Inter', sans-serif", color: '#666666' }}
@@ -38,7 +34,7 @@ export default function Footer() {
           <div>
             <p
               className="mb-4 text-xs uppercase tracking-[2px]"
-              style={{ fontFamily: "'IBM Plex Mono', monospace", color: '#c4713b' }}
+              style={{ fontFamily: "'IBM Plex Mono', monospace", color: '#009fe3' }}
             >
               Síguenos
             </p>
@@ -79,7 +75,7 @@ export default function Footer() {
               className="text-sm"
               style={{ fontFamily: "'Inter', sans-serif", color: '#666666' }}
             >
-              © 2025 IMANTEK S.A.S.<br />
+              © 2025–2026 IMANTEK S.A.S.<br />
               Colombia · imantek.com.co
             </p>
           </div>
@@ -94,13 +90,13 @@ export default function Footer() {
             className="text-xs"
             style={{ fontFamily: "'Inter', sans-serif", color: '#666666' }}
           >
-            © 2025 IMANTEK S.A.S. · Colombia · imantek.com.co
+            © 2025–2026 IMANTEK S.A.S. · Colombia · imantek.com.co
           </p>
           <p
             className="text-xs"
             style={{ fontFamily: "'IBM Plex Mono', monospace", color: '#555555' }}
           >
-            Brochure Corporativo 2025–2027
+            Portafolio Corporativo 2025–2027
           </p>
         </div>
       </div>

@@ -4,17 +4,14 @@
 
 @layer base {
   :root {
-    --color-charcoal: #1a1a1a;
-    --color-charcoal-deep: #101414;
-    --color-cream: #f5f3ef;
-    --color-copper: #c4713b;
-    --color-copper-light: #d4854a;
-    --color-copper-bright: #f0a15f;
-    --color-copper-dark: #8a5a2b;
-    --color-stone: #8a8580;
-    --color-teal: #69c9d2;
-    --color-border: #d4d0ca;
-    --color-border-dark: #333333;
+    --color-primary: #1e3a8a;
+    --color-primary-light: #2563eb;
+    --color-bg: #ffffff;
+    --color-bg-alt: #f3f4f6;
+    --color-text: #1f2937;
+    --color-text-secondary: #6b7280;
+    --color-border: #d1d5db;
+    --color-border-dark: #374151;
 
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
@@ -22,19 +19,19 @@
     --card-foreground: 240 10% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
-    --primary: 240 5.9% 10%;
+    --primary: 221 83% 23%;
     --primary-foreground: 0 0% 98%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
+    --secondary: 217 91% 60%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+    --accent: 221 83% 23%;
+    --accent-foreground: 0 0% 98%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 240 5.9% 10%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 221 83% 23%;
     --radius: 0.625rem;
   }
 
@@ -47,9 +44,9 @@
   }
 
   body {
-    font-family: 'Inter', sans-serif;
-    background-color: var(--color-cream);
-    color: var(--color-charcoal);
+    font-family: "Inter", sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }

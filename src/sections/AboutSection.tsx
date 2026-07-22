@@ -1,11 +1,6 @@
-import { useState } from 'react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
-import { imageFallback, imagePath } from '../lib/images';
-
-const aboutImage = imagePath('about-image.jpg');
 
 export default function AboutSection() {
-  const [aboutSrc, setAboutSrc] = useState(aboutImage);
   const leftRef = useScrollReveal<HTMLDivElement>({
     translateX: -30,
     duration: 0.7,
@@ -33,7 +28,7 @@ export default function AboutSection() {
           <div ref={leftRef}>
             <p
               className="mb-4 text-xs uppercase tracking-[2px]"
-              style={{ fontFamily: "'IBM Plex Mono', monospace", color: '#c4713b' }}
+              style={{ fontFamily: "'IBM Plex Mono', monospace", color: '#009fe3' }}
             >
               Sobre nosotros
             </p>
@@ -57,7 +52,7 @@ export default function AboutSection() {
               <div className="flex-1 border p-6" style={{ borderColor: '#d4d0ca' }}>
                 <h3
                   className="mb-3 text-base font-medium uppercase"
-                  style={{ fontFamily: "'Space Grotesk', sans-serif", color: '#c4713b' }}
+                  style={{ fontFamily: "'Space Grotesk', sans-serif", color: '#009fe3' }}
                 >
                   Misi&oacute;n
                 </h3>
@@ -72,7 +67,7 @@ export default function AboutSection() {
               <div className="flex-1 border p-6" style={{ borderColor: '#d4d0ca' }}>
                 <h3
                   className="mb-3 text-base font-medium uppercase"
-                  style={{ fontFamily: "'Space Grotesk', sans-serif", color: '#c4713b' }}
+                  style={{ fontFamily: "'Space Grotesk', sans-serif", color: '#009fe3' }}
                 >
                   Visi&oacute;n
                 </h3>
@@ -89,12 +84,9 @@ export default function AboutSection() {
           {/* Right Column - Image */}
           <div ref={rightRef}>
             <img
-              src={aboutSrc}
+              src="/images/about-image.png"
               alt="Ingeniero industrial IMANTEK en instalación"
-              loading="lazy"
-              decoding="async"
-              onError={() => setAboutSrc(imageFallback('IMANTEK'))}
-              className="block min-h-[320px] w-full object-cover sm:min-h-0"
+              className="h-auto w-full object-cover"
               style={{ border: '2px solid #d4d0ca', aspectRatio: '3/4' }}
             />
           </div>

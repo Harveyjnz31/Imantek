@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import BrandLogo from '../components/BrandLogo';
 
 const navLinks = [
   { label: 'Servicios', href: '#servicios' },
@@ -57,13 +58,10 @@ export default function Navigation() {
               e.preventDefault();
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
-            className="text-lg font-bold uppercase tracking-[3px] transition-colors duration-300"
-            style={{
-              fontFamily: "'Space Grotesk', sans-serif",
-              color: scrolled ? '#1a1a1a' : '#ffffff',
-            }}
+            className="flex items-center transition-opacity duration-300 hover:opacity-85"
+            aria-label="IMANTEK - Ir al inicio"
           >
-            IMANTEK
+            <BrandLogo className="text-[1.35rem] sm:text-[1.55rem]" dark={scrolled} />
           </a>
 
           {/* Desktop Nav */}
@@ -126,7 +124,7 @@ export default function Navigation() {
               key={link.href}
               href={link.href}
               onClick={(e) => handleLinkClick(e, link.href)}
-              className="text-2xl font-medium uppercase tracking-[2px] text-white hover:text-[#c4713b] transition-colors"
+              className="text-2xl font-medium uppercase tracking-[2px] text-white hover:text-[#009fe3] transition-colors"
               style={{ fontFamily: "'Space Grotesk', sans-serif" }}
             >
               {link.label}
